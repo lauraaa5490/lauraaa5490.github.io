@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        position: relative;
+        width: 600px;
+        height: 400px;
+        border: 3px solid #333;
+        overflow: hidden;
+        margin: 0 auto; /* 居中显示 */
+      }
+      #list {
+        position: absolute;
+        z-index: 1;
+        width: 2400px;
+        height: 400px;
+        left: 0px;
+      }
+      #list img {
+        float: left;
+        width: 600px;
+        height: 400px;
+      }
+      #buttons {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+        height: 50px;
+        width: 600px;
+        text-align: center;
+        margin: 20px auto; /* 居中显示 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #buttons span {
+        display: inline-block;
+        margin: 0 5px;
+        width: 40px;
+        height: 20px;
+        border: 1px solid #333;
+        border-radius: 10px; /* 圆角矩形 */
+        background: #f0f0f0;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        line-height: 20px; /* 垂直居中文本 */
+        text-align: center; /* 水平居中文本 */
+        font-size: 12px;
+        color: #333;
+      }
+      #buttons .on {
+        background: #4caf50; /* 绿色 */
+        color: #fff; /* 文本颜色为白色 */
+      }
+      #buttons span:hover {
+        background: #ccc;
+      }
+      #buttons label {
+        margin-left: 20px;
+        font-size: 14px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="list">
+        <img src="1.jpg" />
+        <img src="2.jpg" />
+        <img src="3.jpg" />
+        <img src="4.jpg" />
+      </div>
+    </div>
+    <div id="buttons">
+      <span index="1" class="on">1</span>
+      <span index="2">2</span>
+      <span index="3">3</span>
+      <span index="4">4</span>
+      <label>点击按钮切换图片</label>
+    </div>
+    <script>
+      let width = 600;
+      let list = document.getElementById("list");
+      let buttons = document.getElementById("buttons").getElementsByTagName("span");
+      let num = list.children.length; // 获取图片数量
+
+      // 为每个按钮添加点击事件
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = function () {
+          let index = this.getAttribute("index");
+          let newLeft = -(index - 1) * width;
+          list.style.left = newLeft + "px";
+
+          // 清除所有按钮的on类
+          for (let j = 0; j < buttons.length; j++) {
+            buttons[j].classList.remove("on");
+          }
+          // 为当前按钮添加on类
+          this.classList.add("on");
+        };
+      }
+    </script>
+  </body>
+</html>

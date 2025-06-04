@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李华的简历</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* 导入像素风格英文字体 */
+        @font-face {
+            font-family: '04B_19'; /* 定义中文像素字体 */
+            src: url('04B_19.ttf') format('truetype'); /* 字体文件路径 */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: '04B_19', 'Press Start 2P', cursive; /* 修改字体为 04B_19 */
+            background-color: #f1b6de;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #cef1f9;
+            box-shadow: 0 0 10px rgba(209, 13, 13, 0.694);
+        }
+        .header, .footer {
+            background-color: #4193eb;
+            color: #ef459a;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .header .container, .footer .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header h1, .footer h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .header p, .footer p {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+        }
+        .content {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .content div {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(53, 38, 222, 0.833);
+        }
+        .content h2 {
+            border-bottom: 2px solid #6b3f3f;
+            padding-bottom: 5px;
+        }
+        .content ul, .content ol {
+            list-style-type: none;
+            padding: 0;
+        }
+        .content ul li, .content ol li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .content ul li i, .content ol li i {
+            margin-right: 10px;
+        }
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .content table, .content table th, .content table td {
+            border: 1px solid #dc2f51;
+        }
+        .content table th, .content table td {
+            padding: 8px;
+            text-align: left;
+        }
+        .content table th {
+            background-color: #77bfe1;
+        }
+        .profile-pic {
+            float: left;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>欢迎来到我的简历页面</h1>
+            <p>这里是李华的个人简历，感谢您的访问！</p>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="container">
+            <img src="doggg.jpg" alt="李华" class="profile-pic" width="100px">
+            <div class="section">
+                <h3>个人简介</h3>
+                <p>
+                    我是一名热爱写作的应届毕业生，拥有扎实的文学功底和丰富的写作经验。在大学期间，我积极参加各类写作比赛，并多次获奖。我对文学有着浓厚的兴趣，尤其擅长撰写散文和诗歌。此外，我还具备良好的沟通能力和团队合作精神，能够快速适应新环境。
+                </p>
+                <ul>
+                    <li><i class="fas fa-female"></i><b>性别:</b> 女</li>
+                    <li><i class="fas fa-phone"></i><b>电话:</b> 12345678900</li>
+                    <li><i class="fas fa-envelope"></i><b>邮箱:</b> 12345678900@123.com</li>
+                    <li><i class="fas fa-birthday-cake"></i><b>生日:</b> xxxx.xx.xx</li>
+                    <li><i class="fas fa-pencil-alt"></i><b>兴趣:</b> 写作文、阅读、旅行</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h3>教育背景</h3>
+                <table>
+                    <tr>
+                        <th>时间</th>
+                        <th>学校</th>
+                        <th>成果</th>
+                    </tr>
+                    <tr>
+                        <td>2019-2023</td>
+                        <td>某知名大学</td>
+                        <td>文学学士学位</td>
+                    </tr>
+                    <tr>
+                        <td>2016-2019</td>
+                        <td>某重点高中</td>
+                        <td>优秀毕业生</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="section">
+                <h3>技能与证书</h3>
+                <ul>
+                    <li>熟练掌握 Microsoft Office（Word、Excel、PowerPoint）</li>
+                    <li>获得全国大学生写作比赛二等奖</li>
+                    <li>通过英语六级考试（CET-6）</li>
+                    <li>具备良好的时间管理能力和项目管理能力</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h3>工作经历</h3>
+                <p>
+                    <b>实习编辑 | 某出版社</b>（2022年7月 - 2022年9月）
+                </p>
+                <ul>
+                    <li>协助编辑团队完成书籍的校对和排版工作</li>
+                    <li>参与编辑会议，提出创意和建议</li>
+                    <li>负责整理和归档稿件，确保文档的完整性和准确性</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h3>个人项目</h3>
+                <p>
+                    <b>个人文学博客</b>
+                </p>
+                <ul>
+                    <li>创建并维护一个个人文学博客，分享自己的作品和阅读心得</li>
+                    <li>博客每月访问量超过1000次，吸引了众多文学爱好者</li>
+                    <li>通过博客与读者互动，提升了自己的写作水平和沟通能力</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h3>荣誉奖项</h3>
+                <ul>
+                    <li>全国大学生写作比赛二等奖</li>
+                    <li>校级优秀学生奖学金</li>
+                    <li>市级优秀青年志愿者</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h3>语言能力</h3>
+                <ul>
+                    <li>中文（母语）</li>
+                    <li>英语（流利，通过CET-6）</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>感谢您的阅读！</p>
+        </div>
+    </div>
+</body>
+</html>

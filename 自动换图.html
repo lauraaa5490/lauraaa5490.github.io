@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        position: relative;
+        width: 600px;
+        height: 400px;
+        border: 3px solid #333;
+        overflow: hidden;
+      }
+      #list {
+        position: absolute;
+        z-index: 1;
+        width: 2400px;
+        height: 400px;
+        left: 0px;
+      }
+      #list img {
+        float: left;
+        width: 600px;
+        height: 400px;
+      }
+      #buttons {
+        position: absolute;
+        left: 250px;
+        bottom: 20px;
+        z-index: 2;
+        height: 10px;
+        width: 100px;
+      }
+      #buttons span {
+        float: left;
+        margin-right: 5px;
+        width: 10px;
+        height: 10px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        background: #333;
+        cursor: pointer;
+      }
+      #buttons .on {
+        background: orangered;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="list">
+        <img src="1.jpg" />
+        <img src="2.jpg" />
+        <img src="3.jpg" />
+        <img src="4.jpg" />
+      </div>
+      <div id="buttons">
+        <span index="1" class="on"></span>
+        <span index="2"></span>
+        <span index="3"></span>
+        <span index="4"></span>
+      </div>
+    </div>
+    <script>
+      let width = 600;
+      let list = document.getElementById("list");
+      let buttons = document.getElementById("buttons").getElementsByTagName("span");
+      let num = list.children.length; // get img number
+      let index = 1;
+
+      function animate(offset) {
+        let left = parseInt(getComputedStyle(list).left);
+        let newLeft = left - offset * width;
+        list.style.left = newLeft + "px";
+        if (newLeft <= -num * width) {
+          list.style.left = "0px";
+          index = 1;
+        }
+        if (newLeft > 0) {
+          list.style.left = -(num - 1) * width + "px";
+          index = num;
+        }
+        setButtonStatus();
+      }
+
+      function setButtonStatus() {
+        for (let i = 0; i < buttons.length; i++) {
+          buttons[i].classList.remove("on");
+        }
+        buttons[index - 1].classList.add("on");
+      }
+
+      // 自动播放
+      let timer = setInterval(function () {
+        animate(1);
+        index++;
+        if (index > num) index = 1;
+      }, 1000); // 每1秒自动切换一次
+
+      // 点击按钮切换图片
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = function () {
+          let clickIndex = parseInt(this.getAttribute("index"));
+          let offset = index - clickIndex;
+          animate(offset);
+          index = clickIndex;
+        };
+      }
+    </script>
+  </body>
+</html>
